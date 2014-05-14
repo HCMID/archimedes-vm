@@ -17,8 +17,8 @@ then
 else
     echo "Installing phoros archive"
     cd /vagrant
-    echo  Running  $GIT clone https://github.com/neelsmith/archimedes-hc
-    $GIT clone https://github.com/neelsmith/archimedes-hc
+    echo  Running  $GIT clone https://github.com/HCMID/archimedes-vm.git
+    $GIT clone https://github.com/HCMID/archimedes-vm.git
 fi
 # citemgr
 if [ -d "/vagrant/citemgr" ]

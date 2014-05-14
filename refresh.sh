@@ -8,14 +8,17 @@ echo Will use gradle from $GRADLE
 # 1. the archimedes-hc archive.
 # 2. citemgr
 # 3. citeservlet
-# Phoros archive:
+
+echo ""
+echo "1. Check for current repositories"
+# archive:
 if [ -d "/vagrant/archimedes-hc" ]
 then
     echo "Checking archive for updates"
     cd /vagrant/archimedes-hc
     $GIT pull
 else
-    echo "Installing phoros archive"
+    echo "Installing archimedes-hc archive"
     cd /vagrant
     echo  Running  $GIT clone https://github.com/HCMID/archimedes-vm.git
     $GIT clone https://github.com/HCMID/archimedes-vm.git
@@ -44,8 +47,11 @@ else
     echo  Running  $GIT clone https://github.com/cite-architecture/citeservlet.git
     $GIT clone https://github.com/cite-architecture/citeservlet.git
 fi
+
+
 # With everything up to date, then:
-echo All files up date.  Now building TTL.
+echo ""
+echo 2. All files up date.  Now building TTL.
 # 1. build TTL
 cd /vagrant/citemgr
 echo Building project RDF graph.
@@ -61,9 +67,22 @@ if [ -d "/vagrant/sparql/tdbs" ]; then
 fi
 /bin/mkdir /vagrant/sparql/tdbs
 /vagrant/jena/bin/tdbloader2 -loc /vagrant/sparql/tdbs /vagrant/sparql/all.ttl
-echo Loaded into fuseki. Now starting servlet.
+
+
+echo ""
+echo 3. Loaded into fuseki. Now starting fuseki
+
+# And start fuseki:
+cd /vagrant/fuseki
+./fuseki-server --port=3030 --config=/vagrant/sparql/fuseki-conf.ttl &
+
+
+
 # 3. start servlet
 cd /vagrant/citeservlet
-echo Starting servlet.
-$GRADLE clean && $GRADLE   -Pconf=/vagrant/archimedes-hc/confs/localconf.gradle   -Plinks=/vagrant/archimedes-hc/confs/locallinks.gradle   -Pcustom=/vagrant/archimedes-hc/servlet/ jettyRunWar
+echo  ""
+
+echo 4. Starting servlet.
+$GRADLE clean && $GRADLE   -Pconf=/vagrant/archimedes-hc/confs/localconf.gradle   -Plinks=/vagrant/archimedes-hc/confs/locallinks.gradle   -Pcustom=/vagrant/archimedes-hc/servlet/ jettyRunWar  &
+echo ""
 echo Finished everything:  servlet running.

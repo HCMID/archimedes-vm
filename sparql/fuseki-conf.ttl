@@ -16,7 +16,7 @@
    # ja:loadClass "your.code.Class" ;
 
    fuseki:services (
-     <#service_tdb_latepig>
+     <#service_tdb_archimedes>
    ) .
 
 # TDB
@@ -28,9 +28,9 @@ tdb:GraphTDB    rdfs:subClassOf  ja:Model .
 ## ---------------------------------------------------------------
 ## Updatable TDB dataset with all services enabled.
 
-<#service_tdb_latepig> rdf:type fuseki:Service ;
-    rdfs:label                      "Sources for Latin epigraphy and pedagogy";
-    fuseki:name                     "latepig" ;
+<#service_tdb_archimedes> rdf:type fuseki:Service ;
+    rdfs:label                      "Archimedes project at Holy Cross";
+    fuseki:name                     "archimedes" ;
     fuseki:serviceQuery             "query" ;
     fuseki:serviceQuery             "sparql" ;
     fuseki:serviceUpdate            "update" ;
@@ -38,11 +38,11 @@ tdb:GraphTDB    rdfs:subClassOf  ja:Model .
     fuseki:serviceReadWriteGraphStore      "data" ;
     # A separate read-only graph store endpoint:
     fuseki:serviceReadGraphStore       "get" ;
-    fuseki:dataset           <#tdb_dataset_latepig> ;
+    fuseki:dataset           <#tdb_dataset_archimedes> ;
     .
 
-<#tdb_dataset_latepig> rdf:type      tdb:DatasetTDB ;
-    tdb:location "/data/tdbs/latepig" ;
+<#tdb_dataset_archimedes> rdf:type      tdb:DatasetTDB ;
+    tdb:location "/vagrant/sparql/tdbs" ;
 ##     # Query timeout on this dataset (milliseconds)
        ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "50000,600000" ] ;
 #s#     # Default graph for query is the (read-only) union of all named graphs.

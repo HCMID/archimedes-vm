@@ -65,5 +65,5 @@ echo Loaded into fuseki. Now starting servlet.
 # 3. start servlet
 cd /vagrant/citeservlet
 echo Starting servlet.
-$GRADLE clean && $GRADLE   -Pconf=/vagrant/archimedes-hc/confs/localconf.gradle   -Plinks=/vagrant/archimedes-hc/confs/locallinks.gradle   -Pcustom=/vagrant/archimedes-hc/servletoverlay/ jettyRunWar
+$GRADLE clean && $GRADLE   -Pconf=/vagrant/archimedes-hc/confs/localconf.gradle   -Plinks=/vagrant/archimedes-hc/confs/locallinks.gradle   -Pcustom=/vagrant/archimedes-hc/servlet/ jettyRunWar
 echo Finished everything:  servlet running.

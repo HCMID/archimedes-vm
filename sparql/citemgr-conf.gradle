@@ -12,14 +12,14 @@ project.ext {
 
     // 2. Configuration of image repository.
     // Path to directory with csv files defining image collections
-    imgcolldir = "/vagrant/archimedes-hc/images/inventory"
+    imgcolldir = "/vagrant/archimedes-hc/images/inventories"
     // Path to directory with csv files containing image data
     imgdatadir = "/vagrant/archimedes-hc/images/imagedata"
 
     // 3. Configuration of CITE object repository.
     // Path to collection inventory file:
-    collinv = "/vagrant/archimedes-hc/collections/inventory.xml"
-    // Path to directory where XML editions are found:
+    collinv = "/vagrant/archimedes-hc/collections/inventory/inventory.xml"
+    // Path to directory where delimited-text files are found:
     collarchive = "/vagrant/archimedes-hc/collections"
 
 

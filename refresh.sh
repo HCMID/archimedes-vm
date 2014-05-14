@@ -84,5 +84,4 @@ echo  ""
 
 echo 4. Starting servlet.
 $GRADLE clean && $GRADLE   -Pconf=/vagrant/archimedes-hc/confs/localconf.gradle   -Plinks=/vagrant/archimedes-hc/confs/locallinks.gradle   -Pcustom=/vagrant/archimedes-hc/servlet/ jettyRunWar  &
-echo ""
-echo Finished everything:  servlet running.
+

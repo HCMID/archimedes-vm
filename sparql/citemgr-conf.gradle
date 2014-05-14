@@ -1,37 +1,33 @@
-/* Configuration for building latinsrcs archive with citemgr.
+/* Configuration for building archimedes-hc archive with citemgr.
 */
 
 
 project.ext {
     // 1. Configuration of text repository.
     // Path to text inventory file:
-    ctsinventory = "/vagrant/latinsrcs/texts/inventories/inventory-all.xml"
+    ctsinventory = "/vagrant/archimedes-hc/texts/inventories/inventory-all.xml"
 
     // Path to directory where XML editions are found:
-    ctsarchive = "/vagrant/latsrcs/texts/editions"
-
-    // Name of hocuspocus tokenization system to use
-    // (fully qualified class name)
-    tokenSystem = "edu.holycross.shot.hocuspocus.DefaultTokenizationSystem"
+    ctsarchive = "/vagrant/archimedes-hc/texts/editions"
 
     // 2. Configuration of image repository.
     // Path to directory with csv files defining image collections
-    imgcolldir = "/vagrant/latinsrcs/images/inventory"
+    imgcolldir = "/vagrant/archimedes-hc/images/inventory"
     // Path to directory with csv files containing image data
-    imgdatadir = "/vagrant/latinsrcs/images/imagedata"
+    imgdatadir = "/vagrant/archimedes-hc/images/imagedata"
 
     // 3. Configuration of CITE object repository.
     // Path to collection inventory file:
-    collinv = "/vagrant/latinsrcs/collections/inventory.xml"
+    collinv = "/vagrant/archimedes-hc/collections/inventory.xml"
     // Path to directory where XML editions are found:
-    collarchive = "/vagrant/latinsrcs/collections"
+    collarchive = "/vagrant/archimedes-hc/collections"
 
 
     // 4. Configuration of indices.
     // Path to index inventory file:
-    idxinv = "/vagrant/latinsrcs/indices/inventory.xml"
+    idxinv = "/vagrant/archimedes-hc/indices/inventory.xml"
     // Path to directory where tsv or csv files are found
-    idxarchive = "/vagrant/latinsrcs/indices"
+    idxarchive = "/vagrant/archimedes-hc/indices"
 
     prefixString = "@prefix cts:        <http://www.homermultitext.org/cts/rdf/> .\n@prefix cite:        <http://www.homermultitext.org/cite/rdf/> .\n@prefix hmt:        <http://www.homermultitext.org/hmt/rdf/> .\n@prefix citedata:        <http://www.homermultitext.org/hmt/citedata/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>. \n@prefix  xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix olo:     <http://purl.org/ontology/olo/core#> .\n@prefix lex:        <http://data.perseus.org/rdfverbs/> .\n@prefix pal: <http://shot.holycrossedu/rdfverbs/pal/> .\n@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix hclat: <http://shot.holycross.edu/rdf/hclat/> .\n@prefix chron: <http://shot.holycross.edu/chron/rdf/> .\n@prefix owl:        <http://www.w3.org/2002/07/owl#> .\n\n"
 
